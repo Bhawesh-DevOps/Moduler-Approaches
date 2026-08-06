@@ -1,0 +1,89 @@
+name: Terraform CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+
+  terraform:
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./parent-module
+
+    env:
+      ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+      ARM_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+
+    steps:
+
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Install Terraform
+      uses: hashicorp/setup-terraform@v3
+
+    - name: Terraform Init
+      run: terraform init
+
+    - name: Terraform Format
+      run: terraform fmt -check
+
+    - name: Terraform Validate
+      run: terraform validate
+
+    ####################################################
+    # GitLeaks
+    ####################################################
+
+    - name: Secret Scan
+      uses: gitleaks/gitleaks-action@v2
+
+    ####################################################
+    # Checkov
+    ####################################################
+
+    - name: IaC Security Scan
+      uses: bridgecrewio/checkov-action@master
+      with:
+        directory: ./parent-module
+        framework: terraform
+
+    ####################################################
+    # Infracost
+    ####################################################
+
+    - name: Setup Infracost
+      uses: infracost/actions/setup@v3
+
+    - name: Generate Cost Estimate
+      run: |
+        terraform plan -out=tfplan
+        infracost breakdown --path tfplan
+
+    ####################################################
+    # Terraform Plan
+    ####################################################
+
+    - name: Terraform Plan
+      run: terraform plan -out=tfplan
+
+    ####################################################
+    # Apply only Main Branch
+    ####################################################
+
+    - name: Terraform Apply
+      if: github.ref == 'refs/heads/main'
+      run: terraform apply -auto-approve tfplan
