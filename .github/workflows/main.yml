@@ -34,7 +34,7 @@ jobs:
         run: |
           pwd
           ls -la
-          ls -la ./parent-module
+          ls -la ./environments/prod
 
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
@@ -62,7 +62,7 @@ jobs:
       - name: IaC Security Scan
         uses: bridgecrewio/checkov-action@master
         with:
-          directory: ./parent-module
+          directory: ./environments/prod
           framework: terraform
 
       ####################################################
