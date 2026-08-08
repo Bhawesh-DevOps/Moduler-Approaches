@@ -17,7 +17,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: ./parent-module
+        working-directory: ./environments/prod
 
     env:
       ARM_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
