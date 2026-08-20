@@ -75,9 +75,9 @@ vms = {
     nic_subnet_name = "frontend-subnet-prod"
     nic_vnet_name   = "vnet-chor-prod"
     vm_name         = "frontend-vm-1-prod"
-    vm_size         = "Standard_B1s"
+    vm_size         = "Standard_B2s"
     admin_username  = "devopsadmin"
-    key_vault_name  = "kv-chor-prod-45678"
+    key_vault_name  = "kv-chor-prod-new01"
     secret_name     = "admin-password-prod"
 
     image_publisher = "Canonical"
@@ -93,9 +93,9 @@ vms = {
     nic_subnet_name = "frontend-subnet-prod"
     nic_vnet_name   = "vnet-chor-prod"
     vm_name         = "frontend-vm-2-prod"
-    vm_size         = "Standard_B1s"
+    vm_size         = "Standard_B2s"
     admin_username  = "devopsadmin"
-    key_vault_name  = "kv-chor-prod-45678"
+    key_vault_name  = "kv-chor-prod-new01"
     secret_name     = "admin-password-prod"
 
     image_publisher = "Canonical"
@@ -111,9 +111,9 @@ vms = {
     nic_subnet_name = "backend-subnet-prod"
     nic_vnet_name   = "vnet-chor-prod"
     vm_name         = "backend-vm-1-prod"
-    vm_size         = "Standard_B1s"
+    vm_size         = "Standard_B2s"
     admin_username  = "devopsadmin"
-    key_vault_name  = "kv-chor-prod-45678"
+    key_vault_name  = "kv-chor-prod-new01"
     secret_name     = "admin-password-prod"
 
     image_publisher = "Canonical"
@@ -129,9 +129,9 @@ vms = {
     nic_subnet_name = "backend-subnet-prod"
     nic_vnet_name   = "vnet-chor-prod"
     vm_name         = "backend-vm-2-prod"
-    vm_size         = "Standard_B1s"
+    vm_size         = "Standard_B2s"
     admin_username  = "devopsadmin"
-    key_vault_name  = "kv-chor-prod-45678"
+    key_vault_name  = "kv-chor-prod-new01"
     secret_name     = "admin-password-prod"
 
     image_publisher = "Canonical"
@@ -149,7 +149,7 @@ vms = {
     vm_name         = "database-vm-prod"
     vm_size         = "Standard_B2s"
     admin_username  = "devopsadmin"
-    key_vault_name  = "kv-chor-prod-45678"
+    key_vault_name  = "kv-chor-prod-new01"
     secret_name     = "admin-password-prod"
 
     image_publisher = "Canonical"
@@ -193,7 +193,7 @@ load_balancers = {
 
 key_vaults = {
   kv1 = {
-    name        = "kv-chor-prod-45678"
+    name        = "kv-chor-prod-new01"
     location    = "centralindia"
     rg_name     = "rg-chor-prod"
     secret_name = "admin-password-prod"
