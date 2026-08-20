@@ -75,10 +75,10 @@ vms = {
     nic_subnet_name = "frontend-subnet-prod"
     nic_vnet_name   = "vnet-chor-prod"
     vm_name         = "frontend-vm-1-prod"
-    vm_size         = "Standard_D2s_v5"
+    vm_size         = "Standard_D2as_v5"
     admin_username  = "devopsadmin"
-    key_vault_name  = "kv-chor-prod-82641"
-    secret_name     = "admin-password-prod-01"
+    key_vault_name  = "kv-chor-prod-93752"
+    secret_name     = "admin-password-prod-02"
 
     image_publisher = "Canonical"
     image_offer     = "0001-com-ubuntu-server-jammy"
@@ -93,10 +93,10 @@ vms = {
     nic_subnet_name = "frontend-subnet-prod"
     nic_vnet_name   = "vnet-chor-prod"
     vm_name         = "frontend-vm-2-prod"
-    vm_size         = "Standard_D2s_v5"
+    vm_size         = "Standard_D2as_v5"
     admin_username  = "devopsadmin"
-    key_vault_name  = "kv-chor-prod-82641"
-    secret_name     = "admin-password-prod-01"
+    key_vault_name  = "kv-chor-prod-93752"
+    secret_name     = "admin-password-prod-02"
 
     image_publisher = "Canonical"
     image_offer     = "0001-com-ubuntu-server-jammy"
@@ -111,10 +111,10 @@ vms = {
     nic_subnet_name = "backend-subnet-prod"
     nic_vnet_name   = "vnet-chor-prod"
     vm_name         = "backend-vm-1-prod"
-    vm_size         = "Standard_D2s_v5"
+    vm_size         = "Standard_D2as_v5"
     admin_username  = "devopsadmin"
-    key_vault_name  = "kv-chor-prod-82641"
-    secret_name     = "admin-password-prod-01"
+    key_vault_name  = "kv-chor-prod-93752"
+    secret_name     = "admin-password-prod-02"
 
     image_publisher = "Canonical"
     image_offer     = "0001-com-ubuntu-server-jammy"
@@ -129,10 +129,10 @@ vms = {
     nic_subnet_name = "backend-subnet-prod"
     nic_vnet_name   = "vnet-chor-prod"
     vm_name         = "backend-vm-2-prod"
-    vm_size         = "Standard_D2s_v5"
+    vm_size         = "Standard_D2as_v5"
     admin_username  = "devopsadmin"
-    key_vault_name  = "kv-chor-prod-82641"
-    secret_name     = "admin-password-prod-01"
+    key_vault_name  = "kv-chor-prod-93752"
+    secret_name     = "admin-password-prod-02"
 
     image_publisher = "Canonical"
     image_offer     = "0001-com-ubuntu-server-jammy"
@@ -147,10 +147,10 @@ vms = {
     nic_subnet_name = "database-subnet-prod"
     nic_vnet_name   = "vnet-chor-prod"
     vm_name         = "database-vm-prod"
-    vm_size         = "Standard_D2s_v5"
+    vm_size         = "Standard_D2as_v5"
     admin_username  = "devopsadmin"
-    key_vault_name  = "kv-chor-prod-82641"
-    secret_name     = "admin-password-prod-01"
+    key_vault_name  = "kv-chor-prod-93752"
+    secret_name     = "admin-password-prod-02"
 
     image_publisher = "Canonical"
     image_offer     = "0001-com-ubuntu-server-jammy"
@@ -193,9 +193,9 @@ load_balancers = {
 
 key_vaults = {
   kv1 = {
-    name        = "kv-chor-prod-82641"
+    name        = "kv-chor-prod-93752"
     location    = "centralindia"
     rg_name     = "rg-chor-prod"
-    secret_name = "admin-password-prod-01"
+    secret_name = "admin-password-prod-02"
   }
 }
